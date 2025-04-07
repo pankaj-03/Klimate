@@ -1,4 +1,4 @@
-import { URLSearchParams } from "url"
+// import { URLSearchParams } from "url"
 import { CONFIG_API } from "./config"
 import axios from "axios"
 import { Coord, ForecastData, GeocodingData, WeatherData } from "./types"
@@ -44,14 +44,14 @@ class WeatherAPI{
            return this.fetchData<ForecastData>(url);
     }
 
-    async reverseGeocode({lon , lat}:Coord):Promise<GeocodingData>{
+    async reverseGeocode({lon , lat}:Coord):Promise<GeocodingData[]>{
       const url = this.createURL(`${CONFIG_API.GEO}/reverse`,{
            lat: lat.toString(),
            lon: lon.toString(),
            limit: 1
       });
 
-      return this.fetchData<GeocodingData>(url);
+      return this.fetchData<GeocodingData[]>(url);
     }
 
     

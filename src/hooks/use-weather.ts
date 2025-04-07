@@ -40,8 +40,8 @@ export function useReverseGeocodeQuery(coordinates: Coord | null){
      return useQuery({
         queryKey: WEATHER_KEYS.location(coordinates ?? ({lat: 0 , lon: 0})),
         queryFn: ()=>{
-            return coordinates? weatherApi.reverseGeocode(coordinates):null;
+            return coordinates ? weatherApi.reverseGeocode(coordinates):null;
         },
         enabled: !!coordinates
      })
-}
+} 
