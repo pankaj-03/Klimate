@@ -3,6 +3,7 @@ import dlogo from "../assets/logo.png"
 import llogo from "../assets/logo2.png"
 import { useTheme } from "@/context/theme-provider";
 import { Sun , Moon } from "lucide-react";
+import CitySearch from "./city-search";
 const Header = () => {
   const {theme , setTheme} = useTheme();
   const isDark = theme === "dark";
@@ -12,8 +13,9 @@ const Header = () => {
           <Link to={"/"}>
           <img src = {theme === 'dark' ? dlogo : llogo} alt = "LightMode" className="h-14"></img></Link>
 
-          <div>
+          <div className="flex gap-4">
             {/* search */}
+            <CitySearch/>
             {/* theme toggle */}
             <div onClick = {()=>{setTheme(isDark ? 'light' : 'dark')}}
               className = {`flex items-center cursor-pointer transition-transform  duration-500

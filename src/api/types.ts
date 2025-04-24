@@ -65,6 +65,16 @@ export interface ForecastData {
   list: (List | List2 | string)[];
   city: City;
 }
+
+export interface GeocodingData {
+  name: string;
+  local_names: Localnames;
+  lat: number;
+  lon: number;
+  country: string;
+  state: string;
+}
+
 interface City {
   id: number;
   name: string;
@@ -101,13 +111,7 @@ export interface List {
   dt_txt: string;
 }
 
-export interface GeocodingData {
-  name: string;
-  local_names: Localnames;
-  lat: number;
-  lon: number;
-  country: string;
-}
+
 
 export  interface Localnames {
   ar?: string;
