@@ -41,7 +41,6 @@ function FavoriteCityTablet({id , name , lat , lon , onRemove}: FavoriteCityTabl
                const navigate = useNavigate();
                const {data: weather , isLoading} = useWeatherQuery({lat , lon});
                     
-               console.log("chal rha hoon main");
                return (
                
                 <div onClick = {()=> navigate(`/city/${name}?lat=${lat}&lon=${lon}`)}

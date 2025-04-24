@@ -59,11 +59,19 @@ export interface WeatherData {
 }
 
 export interface ForecastData {
-  cod: string;
-  message: number;
-  cnt: number;
-  list: (List | List2 | string)[];
-  city: City;
+     list: Array<{
+      dt: number,
+      main: WeatherData["main"],
+      weather: WeatherData["weather"],
+      wind: WeatherData["wind"],
+      dt_txt: string,
+     }>;
+     city:{
+      name: string,
+      country: string,
+      sunrise: number,
+      sunset: number
+     }
 }
 
 export interface GeocodingData {
@@ -75,16 +83,7 @@ export interface GeocodingData {
   state: string;
 }
 
-interface City {
-  id: number;
-  name: string;
-  coord: Coord;
-  country: string;
-  population: number;
-  timezone: number;
-  sunrise: number;
-  sunset: number;
-}
+
 
 export interface List2 {
   dt: number;
